@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 10, 10, 20;
-  --background-end-rgb: 20, 10, 30;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -19,41 +13,13 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    rgb(10, 10, 20),
+    rgb(20, 10, 30)
+  );
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r;
-  }
-  
-  .gradient-pink {
-    @apply from-pink-400 via-purple-400 to-teal-400;
-  }
-  
-  .gradient-pink-bg {
-    @apply bg-gradient-to-r from-pink-400 via-purple-400 to-teal-400;
-  }
-  
-  .glass-card {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
-  }
-  
-  .glass-card-hover {
-    @apply hover:bg-white/10 hover:border-pink-400/30 transition-all duration-300;
-  }
 }
 
 /* Custom scrollbar */
@@ -72,6 +38,33 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #ec4899, #8b5cf6, #14b8a6);
+}
+
+/* Glass effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(244, 114, 182, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #f472b6, #a78bfa, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient background */
+.gradient-pink-bg {
+  background: linear-gradient(to right, #f472b6, #a78bfa, #2dd4bf);
 }
 
 /* Animations */

@@ -33,14 +33,7 @@ export default function Skills() {
 
   const itemVariants = {
     hidden: { scale: 0.9, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-      },
-    },
+    visible: { scale: 1, opacity: 1 },
   };
 
   const skills = [

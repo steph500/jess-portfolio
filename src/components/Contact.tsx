@@ -26,14 +26,7 @@ export default function Contact() {
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-      },
-    },
+    visible: { y: 0, opacity: 1 },
   };
 
   const handleSubmit = (e: React.FormEvent) => {
